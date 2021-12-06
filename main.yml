@@ -9,3 +9,21 @@
                 name: apache2
                 update_cache: yes
                 state: present
+
+          - name: Ensure python3.8 is at the latest version 
+            apt: 
+                name: 
+                        - python3.8
+                        - python3.8-dev
+                        - libpython3.8
+                        - libpython3.8-dev
+                        - python3-pip
+                        - python3-virtualenv
+                        - virtualenv
+                state: present
+
+          - name: Go to the folder and create venv
+            command:
+                cmd: virtualenv /opt/ENV -p python3.8
+                creates: "/opt/ENV"
+
