@@ -1,0 +1,11 @@
+---
+- name: basic installation
+  hosts: all
+  remote_user: root 
+
+  tasks:
+          - name: Ensure apache is at the latest version 
+            apt: 
+                name: apache2
+                update_cache: yes
+                state: present
